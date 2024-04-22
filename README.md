@@ -26,3 +26,9 @@ cook book 실제 구현할 때 고민과 해결법들...
 API호출.. 스토어 사용에 대한 부분
 
 ---
+1. ItemView 생성
+2. 라우터 정보등록
+
+3. ItemView 컴포넌트에 받아온 params(id)를 이용해 데이터 표현
+
+https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md

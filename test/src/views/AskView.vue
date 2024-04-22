@@ -4,9 +4,12 @@
 
     <!-- <p v-for="(item, index) in this.$store.state.ask" :key="index"> -->
     <p v-for="(item, index) in fetchedAsk" :key="index">
-      <a :href="item.url">
+      <!-- <a :href="item.url">
         {{ item.title }}
-      </a>
+      </a> -->
+      <router-link v-bind:to="`item/${item.id}`">
+        {{ item.title }}
+      </router-link>
       <small>{{ item.time_ago }}, {{ item.domain }}</small>
     </p>
   </div>
@@ -53,6 +56,7 @@ export default {
     //   .catch(function(error) {
     //     console.log(error);
     //   });
+
   },
 }
 </script>
