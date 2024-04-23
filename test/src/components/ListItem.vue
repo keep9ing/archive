@@ -12,7 +12,7 @@
           <small class="link-text">
             {{ item.time_ago }} by
             <router-link :to="`/user/${item.user}`" class="link-text">
-              {{ item.userInfo }}
+              {{ item.user }}
             </router-link>
           </small>
         </div>
@@ -24,8 +24,16 @@
 <script>
 export default {
   created() {
-    console.log('호출 전: ', this);
-    this.$store.dispatch('FETCH_NEWS');
+    // ListItem으로 공통 컴포넌트 뽑은 후 데이터에 따라 분기처리
+    console.log(this.$route.path === '/news');
+    const name = this.$route.name;
+    if (name === 'news') {
+      this.$store.dispatch('FETCH_NEWS');
+    } else if (name === 'ask') {
+      this.$store.dispatch('FETCH_ASK');
+    } else if (name === 'jobs') {
+      this.$store.dispatch('FETCH_JOBS');
+    }
   },
 }
 </script>
