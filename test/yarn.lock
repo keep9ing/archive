@@ -1056,7 +1056,7 @@
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.5.2.tgz"
   integrity sha512-gBxPg3aVO6J0kpfHNILc+NMhXnqHumFxOmjYCFfOiLZfwhnnfhtsdA2hfJlDnj+8PjAs6kKQPenOTKj3Rf7zHw==
 
-"@fortawesome/fontawesome-svg-core@^6.5.2":
+"@fortawesome/fontawesome-svg-core@^6.5.2", "@fortawesome/fontawesome-svg-core@~1 || ~6":
   version "6.5.2"
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.5.2.tgz"
   integrity sha512-5CdaCBGl8Rh9ohNdxeeTMxIj8oc3KNBgIeLMvJosBMdslK/UnEB8rzyDRrbKdL1kDweqBPo4GT9wvnakHWucZw==
@@ -1069,6 +1069,11 @@
   integrity sha512-QWFZYXFE7O1Gr1dTIp+D6UcFUF0qElOnZptpi7PBUMylJh+vFmIedVe1Ir6RM1t2tEQLLSV1k7bR4o92M+uqlw==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.5.2"
+
+"@fortawesome/vue-fontawesome@^2.0.10":
+  version "2.0.10"
+  resolved "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.10.tgz"
+  integrity sha512-OTETSXz+3ygD2OK2/vy82cmUBpuJqeOAg4gfnnv+f2Rir1tDIhQg026Q3NQxznq83ZLz8iNqGG9XJm26inpDeg==
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
@@ -6103,7 +6108,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@*, "vue@^2 || ^3.2.13", vue@^2.0.0, vue@^2.6.14:
+vue@*, "vue@^2 || ^3.2.13", vue@^2.0.0, vue@^2.6.14, vue@~2:
   version "2.7.16"
   resolved "https://registry.npmjs.org/vue/-/vue-2.7.16.tgz"
   integrity sha512-4gCtFXaAA3zYZdTp5s4Hl2sozuySsgz4jy1EnpBHNfpMa9dK1ZCG7viqBPCwXtmgc8nHqUsAu3G4gtmXkkY3Sw==

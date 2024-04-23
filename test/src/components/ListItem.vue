@@ -1,8 +1,9 @@
 <template>
   <div>
     <ul class="news-list">
-      <li v-for="(item, index) in this.$store.state.news" :key="index" class="post">
-        <div class="points">
+      <!-- <li v-for="(item, index) in this.$store.state.news" :key="index" class="post"> -->
+      <li v-for="(item, index) in listItems" :key="index" class="post">
+      <div class="points">
           {{ item.points }}
         </div>
         <div>
@@ -25,7 +26,7 @@
 export default {
   created() {
     // ListItem으로 공통 컴포넌트 뽑은 후 데이터에 따라 분기처리
-    console.log(this.$route.path === '/news');
+    // console.log(this.$route.path === '/news');
     const name = this.$route.name;
     if (name === 'news') {
       this.$store.dispatch('FETCH_NEWS');
@@ -35,6 +36,19 @@ export default {
       this.$store.dispatch('FETCH_JOBS');
     }
   },
+  computed: {
+    // eslint-disable-next-line
+    listItems() {
+      const name = this.$route.name;
+      if (name === 'news') {
+        return this.$store.state.news;
+      } else if (name === 'ask') {
+        return this.$store.state.ask;
+      } else if (name === 'jobs') {
+        return this.$store.state.jobs;
+      }
+    }
+  }
 }
 </script>
 

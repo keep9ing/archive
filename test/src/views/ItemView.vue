@@ -8,7 +8,9 @@
         <div>User<i class="fa-solid fa-user"></i>
         </div>
         <div>
-          <router-link :to="`/user/${fetchedItem.user}`">{{ fetchedItem.user}}</router-link>
+          <router-link :to="`/user/${fetchedItem.user}`">
+            {{ fetchedItem.user}}
+          </router-link>
           <div>{{ fetchedItem.time_age }}</div>        
         </div>
           <h2>{{ fetchedItem.title }}</h2>        
