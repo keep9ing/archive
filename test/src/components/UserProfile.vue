@@ -2,13 +2,16 @@
   <div>
     <div class="user-container">
       <div>User
-        <i class="fa-solid fa-user"></i>
+        <i class="fas fa-user"></i>
       </div>
-      <div>
-        <!-- <router-link :to="`/user/${fetchedItem.user}`">
-          {{ fetchedItem.user}}
-        </router-link>
-        <div>{{ fetchedItem.time_age }}</div>         -->
+      <div class="user-description">
+        <div>{{ info.id}}</div>
+        <!-- <router-link :to="`/user/${userInfo.user}`">
+          {{ userInfo.id}}
+        </router-link> -->
+        <div class="time">
+          {{ info.created }}
+        </div>        
       </div>
     </div>
   </div>
@@ -16,7 +19,9 @@
 
 <script>
 export default {
-
+  props: {
+    info: Object,
+  },
 }
 </script>
 
