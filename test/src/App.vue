@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <top-area></top-area>
-    <router-view></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,5 +26,12 @@ body {
 a {
   text-decoration: none;
   color: #666;
+}
+/* Router Transition */
+.page-ender-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
 }
 </style>

@@ -12,12 +12,13 @@
         <div>
           <!-- 타이틀 -->
           <p class="news-title">
-            <template v-if="item.url">
+            <!-- 해당링크로 연결, 하거나 -->
+            <template v-if="item.domain">
               <a :href="item.url">
                 {{ item.title }}
               </a>
             </template>
-
+            <!-- 유저정보로 연결하는 분기처리 -->
             <template v-else>
               <router-link v-bind:to="`item/${item.id}`">
                 {{ item.title }}
@@ -26,6 +27,7 @@
           </p>
 
           <small class="link-text">
+            <!-- router-link 에 v-if / v-els 분기처리 -->
             {{ item.time_ago }} by
             <router-link
               v-if="item.user"
