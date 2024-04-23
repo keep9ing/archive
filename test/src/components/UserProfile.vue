@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="user-container">
-      <div>User<i class="fa-solid fa-user"></i>
+      <div>User
+        <i class="fa-solid fa-user"></i>
       </div>
       <div>
         <!-- <router-link :to="`/user/${fetchedItem.user}`">

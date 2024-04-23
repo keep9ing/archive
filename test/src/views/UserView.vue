@@ -1,9 +1,9 @@
 <template>
   <div>
     <user-profile></user-profile>
-    <p>name : {{ userInfo.id }}</p>
+    <!-- <p>name : {{ userInfo.id }}</p>
     <p>karma : {{ userInfo.karma }}</p>
-    <p>created : {{ userInfo.created }}</p>
+    <p>created : {{ userInfo.created }}</p> -->
   </div>
 </template>
 
@@ -31,5 +31,4 @@ export default {
 </script>
 
 <style>
-
 </style>

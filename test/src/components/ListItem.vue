@@ -3,18 +3,38 @@
     <ul class="news-list">
       <!-- <li v-for="(item, index) in this.$store.state.news" :key="index" class="post"> -->
       <li v-for="(item, index) in listItems" :key="index" class="post">
-      <div class="points">
-          {{ item.points }}
+        <!-- 포인트영역 -->
+        <div class="points">
+          {{ item.points || 0 }}
         </div>
+
+        <!-- 기타 정보 -->
         <div>
+          <!-- 타이틀 -->
           <p class="news-title">
-            <a :href="item.url">{{ item.title }}</a>
+            <template v-if="item.url">
+              <a :href="item.url">
+                {{ item.title }}
+              </a>
+            </template>
+
+            <template v-else>
+              <router-link v-bind:to="`item/${item.id}`">
+                {{ item.title }}
+              </router-link>
+            </template>
           </p>
+
           <small class="link-text">
             {{ item.time_ago }} by
-            <router-link :to="`/user/${item.user}`" class="link-text">
-              {{ item.user }}
+            <router-link
+              v-if="item.user"
+              :to="`/user/${item.user}`" class="link-text">
+                {{ item.user }}
             </router-link>
+            <a :href="item.url" v-else>
+              {{ item.domain }}
+            </a>
           </small>
         </div>
       </li>
