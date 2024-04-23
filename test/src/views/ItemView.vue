@@ -2,10 +2,13 @@
   <div>
     <!-- item -->
     <!-- <p>{{ this.$store.state.item.title }}</p> -->
-    <!-- 질문 상세 정보 -->
+    <!-- 질문 상세 정보 -> 사용자 정보 -->
     <section>
-      <user-profile :info="fetchedItem"></user-profile>
-      <div class="user-container">
+      <user-profile :info="fetchedItem">
+        <div slot="username">{{ fetchedItem.user }}</div>
+        <template slot="time">{{ fetchedItem.time_ago }}</template>
+      </user-profile>
+      <!-- <div class="user-container">
         <div>User<i class="fa-solid fa-user"></i>
         </div>
         <div>
@@ -15,7 +18,7 @@
           <div class="time">{{ fetchedItem.time_ago }}</div>        
         </div>
           <h2>{{ fetchedItem.title }}</h2>        
-      </div>
+      </div> -->
     </section>
     <!-- 질문 댓글 -->
 
