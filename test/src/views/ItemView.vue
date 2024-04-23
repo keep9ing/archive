@@ -1,34 +1,20 @@
 <template>
   <div>
-    <!-- item -->
-    <!-- <p>{{ this.$store.state.item.title }}</p> -->
-    <!-- 질문 상세 정보 -> 사용자 정보 -->
+    <!-- 사용자 정보 -->
     <section>
       <user-profile :info="fetchedItem">
-        <div slot="username">{{ fetchedItem.user }}</div>
-        <template slot="time">{{ fetchedItem.time_ago }}</template>
+        <!-- <div slot="username">{{ fetchedItem.user }}</div> -->
+        <router-link slot="username" :to="`/user/${fetchedItem.user}`">
+          {{ fetchedItem.user }}
+        </router-link>
+        <template slot="time">{{ 'posted ' + fetchedItem.time_ago }}</template>
       </user-profile>
-      <!-- <div class="user-container">
-        <div>User<i class="fa-solid fa-user"></i>
-        </div>
-        <div>
-          <router-link :to="`/user/${fetchedItem.user}`">
-            {{ fetchedItem.user}}
-          </router-link>
-          <div class="time">{{ fetchedItem.time_ago }}</div>        
-        </div>
-          <h2>{{ fetchedItem.title }}</h2>        
-      </div> -->
     </section>
+    
     <!-- 질문 댓글 -->
-
     <section>
       <div v-html="fetchedItem.content"></div>
     </section>
-    <!-- <p>{{ fetchedItem.title }}</p>
-    <div>
-      {{ fetchedItem.content }}
-    </div> -->
   </div>
 </template>
 
