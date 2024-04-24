@@ -4,6 +4,7 @@ import {
   fetchJobsList,
   fetchUserInfo,
   fetchCommentItem,
+  fetchList,
  } from '../api/index.js';
 
 export default {
@@ -43,6 +44,11 @@ export default {
       .then(({ data }) => {
         commit('SET_ITEM', data)
       })
+      .catch(error => console.log(error));
+  },
+  FETCH_LIST({ commit }, pageName) {
+    fetchList(pageName)
+      .then(({ data }) => commit('SET_LIST', data))
       .catch(error => console.log(error));
   },
 }
