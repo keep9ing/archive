@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 // import AskView from "../views/AskView.vue";
-// import NewsView from "../views/NewsView.vue";
+import NewsView from "../views/NewsView.vue";
 // import JobsView from "../views/JobsView.vue";
 import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
@@ -20,8 +20,8 @@ export const router = new VueRouter({
       path: '/news',
       name: 'news',
       // component : url 주소로 갔을 때 표시할 컴포넌트
-      // component: NewsView,
-      component: createListView('NewsView')
+      component: NewsView,
+      // component: createListView('NewsView')
     },
     {
       path: '/ask',
