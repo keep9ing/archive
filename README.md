@@ -32,3 +32,10 @@ API호출.. 스토어 사용에 대한 부분
 3. ItemView 컴포넌트에 받아온 params(id)를 이용해 데이터 표현
 
 https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md
+
+--- 
+데이터 호출 시점
+1. 컴포넌트  라이프 사이클 훅
+ - created
+
+2. 라우터 네비게이션 가드
