@@ -46,18 +46,18 @@
 
 <script>
 export default {
-  created() {
-    // ListItem으로 공통 컴포넌트 뽑은 후 데이터에 따라 분기처리
-    // console.log(this.$route.path === '/news');
-    const name = this.$route.name;
-    if (name === 'news') {
-      this.$store.dispatch('FETCH_NEWS');
-    } else if (name === 'ask') {
-      this.$store.dispatch('FETCH_ASK');
-    } else if (name === 'jobs') {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
+  // created() {
+  //   // ListItem으로 공통 컴포넌트 뽑은 후 데이터에 따라 분기처리
+  //   // console.log(this.$route.path === '/news');
+  //   const name = this.$route.name;
+  //   if (name === 'news') {
+  //     this.$store.dispatch('FETCH_NEWS');
+  //   } else if (name === 'ask') {
+  //     this.$store.dispatch('FETCH_ASK');
+  //   } else if (name === 'jobs') {
+  //     this.$store.dispatch('FETCH_JOBS');
+  //   }
+  // },
   computed: {
     // eslint-disable-next-line
     listItems() {
