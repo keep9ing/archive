@@ -8,16 +8,25 @@ import {
  } from '../api/index.js';
 
 export default {
-  FETCH_NEWS(context) {
-    return fetchNewsList()
-      .then(response => {
-        console.log(response.data);
-        context.commit('SET_NEWS', response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  // promise
+  // FETCH_NEWS(context) {
+  //   return fetchNewsList()
+  //     .then(response => {
+  //       console.log(response.data);
+  //       context.commit('SET_NEWS', response.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // },
+
+  // async
+  async FETCH_NEWS(context) {
+    const response = await fetchNewsList();
+    context.commit('SET_NEWS', response.data);
+    return response;
   },
+
   FETCH_JOBS(context) {
     return fetchJobsList()
       .then(response => {
@@ -48,7 +57,7 @@ export default {
   },
   // #2 실행
   FETCH_LIST({ commit }, pageName) {
-    // # 호출
+    // # 3호출
     return fetchList(pageName)
       .then(({ data }) => {
         // #4
