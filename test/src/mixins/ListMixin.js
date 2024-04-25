@@ -1,7 +1,10 @@
-// import bus from '../utils/bus.js'
+import bus from '../utils/bus.js'
 
 export default {
   // 재사용할 컴포넌트 옵션 & 로직
+  mounted() {
+    bus.$emit('end:spinner');
+  },
     
   // // ---> route/index.js 로 이동
   // created() {
