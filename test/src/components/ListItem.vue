@@ -61,7 +61,7 @@ export default {
   computed: {
     // eslint-disable-next-line
     listItems() {
-      return this.$store.state.list
+      return this.$store.state.list;
       // const name = this.$route.name;
       // if (name === 'news') {
       //   return this.$store.state.news;

@@ -10,6 +10,7 @@ import {
 export default {
   FETCH_NEWS(context) {
     return fetchNewsList()
+    return fetchNewsList()
       .then(response => {
         console.log(response.data);
         context.commit('SET_NEWS', response.data);
@@ -20,12 +21,14 @@ export default {
   },
   FETCH_JOBS(context) {
     return fetchJobsList()
+    return fetchJobsList()
       .then(response => {
         context.commit('SET_JOBS', response.data)
       })
       .catch(error => console.log(error))
   },
   FETCH_ASK({ commit }) {
+    return fetchAskList()
     return fetchAskList()
       .then(({ data }) => {
         commit('SET_ASK', data);
@@ -34,12 +37,14 @@ export default {
   },
   FETCH_USER({ commit }, name) {
     return fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then(({ data }) => {
         commit('SET_USER', data)
       })
       .catch(error => console.log(error));
   },
   FETCH_ITEM({ commit }, id) {
+    return fetchCommentItem(id)
     return fetchCommentItem(id)
       .then(({ data }) => {
         commit('SET_ITEM', data)
