@@ -47,14 +47,20 @@ export default {
     }
   },
 
-  FETCH_ASK({ commit }) {
-    return fetchAskList()
-      .then(({ data }) => {
-        commit('SET_ASK', data);
-      })
-      .catch(error => console.log(error))
+  // FETCH_ASK({ commit }) {
+  //   return fetchAskList()
+  //     .then(({ data }) => {
+  //       commit('SET_ASK', data);
+  //     })
+  //     .catch(error => console.log(error))
+  // },
+
+  async FETCH_ASK({ commit }) {
+    const response = await fetchAskList();
+    commit('SET_ASK', response.data);
+      return response;
   },
-  
+
   FETCH_USER({ commit }, name) {
     return fetchUserInfo(name)
       .then(({ data }) => {
