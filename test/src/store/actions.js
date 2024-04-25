@@ -27,13 +27,26 @@ export default {
     return response;
   },
 
-  FETCH_JOBS(context) {
-    return fetchJobsList()
-      .then(response => {
-        context.commit('SET_JOBS', response.data)
-      })
-      .catch(error => console.log(error))
+  // promise
+  // FETCH_JOBS(context) {
+  //   return fetchJobsList()
+  //     .then(response => {
+  //       context.commit('SET_JOBS', response.data)
+  //     })
+  //     .catch(error => console.log(error))
+  // },
+
+  // async
+  async FETCH_JOBS({ commit }) {
+    try {
+      const response = await fetchJobsList();
+      commit('SET_JOBS', response.data);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
   },
+
   FETCH_ASK({ commit }) {
     return fetchAskList()
       .then(({ data }) => {
@@ -41,6 +54,7 @@ export default {
       })
       .catch(error => console.log(error))
   },
+  
   FETCH_USER({ commit }, name) {
     return fetchUserInfo(name)
       .then(({ data }) => {
