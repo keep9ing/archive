@@ -5,6 +5,7 @@ export default {
     
   created() {
     bus.$emit('start:spinner');
+    // #1
     this.$store.dispatch('FETCH_LIST', this.$route.name)
       .then(() => {
         console.log('fetched');

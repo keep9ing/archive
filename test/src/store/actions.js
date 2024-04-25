@@ -46,9 +46,15 @@ export default {
       })
       .catch(error => console.log(error));
   },
+  // #2 실행
   FETCH_LIST({ commit }, pageName) {
+    // # 호출
     return fetchList(pageName)
-      .then(({ data }) => commit('SET_LIST', data))
+      .then(({ data }) => {
+        // #4
+        console.log(4);
+        commit('SET_LIST', data)
+      })
       .catch(error => console.log(error));
   },
 }
