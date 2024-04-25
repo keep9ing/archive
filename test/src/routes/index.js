@@ -24,10 +24,10 @@ export const router = new VueRouter({
       // component : url 주소로 갔을 때 표시할 컴포넌트
       component: NewsView,
       // component: createListView('NewsView')
+      // console.log('to', to);
+      // console.log('from', from);
+      // console.log('next', next);
       beforeEnter: (to, from, next) => {
-        // console.log('to', to);
-        // console.log('from', from);
-        // console.log('next', next);
         bus.$emit('start:spinner');
         // #1
         store.dispatch('FETCH_LIST', to.name)
@@ -48,12 +48,36 @@ export const router = new VueRouter({
       name: 'ask',
       component: AskView,
       // component: createListView('AskView')
+      beforeEnter: (to, from, next) => {
+        bus.$emit('start:spinner');
+        store.dispatch('FETCH_LIST', to.name)
+          .then(() => {
+            console.log('fetched ask');
+            bus.$emit('end:spinner');
+            next();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
     },
     {
       path: '/jobs',
       name: 'jobs',
       component: JobsView,
       // component: createListView('JobsView')
+      beforeEnter: (to, from, next) => {
+        bus.$emit('start:spinner');
+        store.dispatch('FETCH_LIST', to.name)
+          .then(() => {
+            console.log('fetched jobs');
+            bus.$emit('end:spinner');
+            next();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
     },
     {
       path: '/user/:id',
