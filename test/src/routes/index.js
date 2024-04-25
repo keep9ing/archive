@@ -46,14 +46,8 @@ export const router = new VueRouter({
     {
       path: '/ask',
       name: 'ask',
-<<<<<<< HEAD
       component: AskView,
       // component: createListView('AskView')
-=======
-      // component: AskView,
-      component: createListView('AskView'),
-
->>>>>>> 261167a311faf3e0eff934842ebafeee6856f53e
     },
     {
       path: '/jobs',
