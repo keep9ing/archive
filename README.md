@@ -39,3 +39,6 @@ https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md
  - created
 
 2. 라우터 네비게이션 가드
+
+---
+되고 있나???
