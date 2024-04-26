@@ -42,3 +42,7 @@ https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md
 
 ---
 되고 있나???
+
+npm i
+npm run dev
+3000
