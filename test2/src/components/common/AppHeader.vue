@@ -6,14 +6,28 @@
       </router-link>
     </div>
     <div class="navigations">
-      <router-link to="/login">로그인</router-link>
-      <router-link to="/signup">회원가입</router-link>
+      <!-- 1 -->
+      <template v-if="isUserLogin">
+        <span class="username">{{ $store.state.username }}</span>
+      </template>
+
+      <!-- 2 -->
+      <template v-else>
+        <router-link to="/login">로그인</router-link>
+        <router-link to="/signup">회원가입</router-link>
+      </template>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isUserLogin() {
+      return this.$store.getters.isLogin;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -50,5 +64,8 @@ a.logo {
 a.router-link-exact-active {
   color: white;
   font-weight: bold;
+}
+.username {
+  color: white;
 }
 </style>
