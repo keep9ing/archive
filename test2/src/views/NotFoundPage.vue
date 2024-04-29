@@ -1,5 +1,7 @@
 <template>
-  <div>app header</div>
+	<div>
+		Page is not found
+	</div>
 </template>
 
 <script>
