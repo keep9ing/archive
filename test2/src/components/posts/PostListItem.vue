@@ -1,12 +1,12 @@
 <template>
   <li>
-    <div calss="post-title">
+    <div class="post-title">
       {{ postItem.title }}
     </div>
-    <div calss="post-contents">
+    <div class="post-contents">
       {{ postItem.contents }}
     </div>
-    <div calss="post-time">
+    <div class="post-time">
       {{ postItem.createdAt }}
     </div>
   </li>
