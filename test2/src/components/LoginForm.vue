@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
 
 export default {
@@ -55,10 +54,14 @@ export default {
           username: this.username,
           password: this.password,
         };
-        const { data } = await loginUser(userData);
-        console.log(data.token);
-        this.$store.commit('setToken', data.token);
-        this.$store.commit('setUsername', data.user.username);
+        // await 키워드 안 넣으면 로그인되기 전에 메인으로 진입하면서 unAUTH 에러가 뜸.
+        await this.$store.dispatch('LOGIN', userData);
+        // const { data } = await loginUser(userData);
+        // console.log(data.token);
+        // this.$store.commit('setToken', data.token);
+        // this.$store.commit('setUsername', data.user.username);
+        // saveAuthToCookie(data.token);
+        // saveUserToCookie(data.user.username);
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드
