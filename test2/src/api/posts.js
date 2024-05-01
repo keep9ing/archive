@@ -11,8 +11,11 @@ function createPost(postData) {
   return posts.post('/', postData);
 }
 
+// 학습노트 삭제
+function deletePost(postId) {
+  return posts.delete(postId);
+}
+
 // 학습노트 수정
 
-// 학습노트 삭제
-
-export { fetchPosts, createPost };
+export { fetchPosts, createPost, deletePost };
