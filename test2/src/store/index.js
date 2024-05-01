@@ -6,8 +6,7 @@ import {
   saveAuthToCookie,
   saveUserToCookie,
 } from '@/utils/cookies';
-import {} from '@/api/index';
-import { loginUser } from '@/api/index';
+import { loginUser } from '@/api/auth';
 
 Vue.use(Vuex);
 
