@@ -4,6 +4,7 @@
       <router-link :to="logoLink" class="logo">
         TIL
         <span v-if="isUserLogin">by {{ $store.state.username }}</span>
+        <router-link to="/page1">page1</router-link>
       </router-link>
     </div>
     <div class="navigations">
