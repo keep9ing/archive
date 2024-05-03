@@ -27,6 +27,10 @@ const router = new VueRouter({
       meta: { auth: true },
     },
     {
+      path: '/page1',
+      component: () => import('@/views/PageOne.vue'),
+    },
+    {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
       meta: { auth: true },
