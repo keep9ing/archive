@@ -38,8 +38,17 @@ json = JSON.stringify(rabbit, (key, value) => {
 console.log(json);
 
 
-
 // 2. JSON to Object
 // parse(json)
+console.clear();
+json = JSON.stringify(rabbit);
+const obj = JSON.parse(json);
+console.log(obj);
 
+// 함수 는 포함되지 않는다! 
+rabbit.jump();
+// obj.jump(); 
+
+console.log(rabbit.birthDate.getDate());
+console.log(obj.birthDate);
 
