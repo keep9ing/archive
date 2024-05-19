@@ -41,6 +41,11 @@ const router = new VueRouter({
       meta: { auth: true },
     },
     {
+      path: '/page1/:id',
+      component: () => import('@/views/PageDetail.vue'),
+      params: true,
+    },
+    {
       path: '*',
       component: () => import('@/views/NotFoundPage.vue'),
     },
