@@ -87,18 +87,22 @@
   
 
 class Counter {
-  constructor() {
+  constructor(runEveryFiveTimes) {
     this.counter = 0;
+    this.callback = runEveryFiveTimes;
   }
   // 클래스에서 함수를 선언할 땐 function이라 안 써도 됨
-  increase(runIf5Times) {
+  increase() {
     this.counter++;
     console.log(this.counter);
     // 1..
-    if(this.counter % 3 === 0) {
-      console.log('yo!')
-    } else if (this.counter % 5 === 0) {
-      runIf5Times(this.counter);
+    if(this.counter % 5 === 0) {
+      // runIf5Times(this.counter);
+
+      this.callback && this.callback(this.counter);
+      // if(this.callback) {
+      //   this.callback(this.counter);
+      // }
     }
   }
 }
@@ -110,15 +114,23 @@ function alertNum(num) {
   alert(`Wow! ${num}`);
 }
 
+// const coolCounter = new Counter(printSomthing);
+// const coolCounter = new Counter(alertNum);
+// 만약 callback 함수를 전달하지 않는다면?
+// -> callback 타입에러 발생 ... undefined
 const coolCounter = new Counter();
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
 
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(printSomthing);
-coolCounter.increase(alertNum);
+const printCounter = new Counter(printSomthing);
+const alertCounter = new Counter(alertNum);
+
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
+coolCounter.increase();
