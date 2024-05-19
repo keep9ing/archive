@@ -91,19 +91,34 @@ class Counter {
     this.counter = 0;
   }
   // 클래스에서 함수를 선언할 땐 function이라 안 써도 됨
-  increase() {
+  increase(runIf5Times) {
     this.counter++;
     console.log(this.counter);
     // 1..
-    if(this.counter % 5 === 0) {
+    if(this.counter % 3 === 0) {
       console.log('yo!')
+    } else if (this.counter % 5 === 0) {
+      runIf5Times(this.counter);
     }
   }
 }
 
+function printSomthing(num) {
+  console.log(`yo! ${num}!`)
+}
+function alertNum(num) {
+  alert(`Wow! ${num}`);
+}
+
 const coolCounter = new Counter();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
-coolCounter.increase();
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(printSomthing);
+coolCounter.increase(alertNum);
