@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealGrid test</title>
+  <script src="./realgrid-lic.js" ></script>
+  <script src="./realgrid.2.8.2.min.js" ></script>
+  <link href="./realgrid-white.css" rel="stylesheet"></link>
+  <link href="./custom-style.css" rel="stylesheet"></link>
+</head>
+<body>
+  <div class="container">
+    <h4>RealGrid</h4>
+    <div class="container inner">
+      <div id="realgrid_master" class="grid"></div>
+      <div id="realgrid_detail" class="grid"></div>
+    </div>
+  </div>
+</body>
+<script defer>
+
+const container = document.getElementById('realgrid_master');
+const masterProvider = new RealGrid.LocalDataProvider();
+const masterGrid = new RealGrid.GridView(container);
+
+const container2 = document.getElementById('realgrid_detail');
+const detailProvider = new RealGrid.LocalDataProvider();
+const detailGrid = new RealGrid.GridView(container2);
+
+
+const fields = ([
+  {
+    fieldName: 'KorName',
+    dataType: 'text',
+  },
+  { 
+    fieldName: 'Age',
+    dataType: 'number',
+  }, 
+])
+const columns = ([
+  {
+    name: 'KorNameColumn',
+    fieldName: 'KorName',
+    type: 'data',
+    width: '70',
+    header: {
+      text: '이름',
+    },
+  },
+]);
+const rows = ([
+  {
+    KorName: '박영호',
+    Gender: '남',
+    Age: '71',
+    Phone: '(025)6563-2802',
+    ProductId: '198160731-00008',
+    KorCountry: '모잠비크',
+    OrderDate: '2021-01-16',
+    CardNumber: '5587-2139-9692-3644',
+    Monetary: 'EUR',
+    StartDate: '2018-02-25',
+    EndDate: '2021-08-12',
+    ToMonth: '23',
+    Month: '41',
+    Year: '3',
+    InterestRate: '0.15',
+    SaveCost: '51000',
+    SaveMaturity: '14950650',
+    CurrentSave: '9304950',
+    Rating: '5',
+    BusinessProficiency: '59',
+    Address: '서울특별시 강서구 공항동 45-89',
+  },
+]);
+//default에서 false처리 하였지만 true로 변경
+masterGrid.editOptions.editable = true;
+
+// gridView.setDataSource(provider);
+masterGrid.setDataSource(masterProvider);
+masterProvider.setFields(fields);
+masterGrid.setColumns(columns);  
+masterProvider.setRows(rows)
+
+// 여기부터 detail ...
+
+const dtl_fields = ([
+  {
+    fieldName: 'KorName',
+    dataType: 'text',
+  },
+  { 
+    fieldName: 'Age',
+    dataType: 'number',
+  }, 
+])
+const dtl_columns = ([
+  {
+    name: 'KorNameColumn',
+    fieldName: 'KorName',
+    type: 'data',
+    width: '70',
+    header: {
+      text: '이름',
+    },
+  },
+]);
+const dtl_rows = ([
+  {
+    KorName: '박영호',
+    Gender: '남',
+    Age: '71',
+    Phone: '(025)6563-2802',
+    ProductId: '198160731-00008',
+    KorCountry: '모잠비크',
+    OrderDate: '2021-01-16',
+    CardNumber: '5587-2139-9692-3644',
+    Monetary: 'EUR',
+    StartDate: '2018-02-25',
+    EndDate: '2021-08-12',
+    ToMonth: '23',
+    Month: '41',
+    Year: '3',
+    InterestRate: '0.15',
+    SaveCost: '51000',
+    SaveMaturity: '14950650',
+    CurrentSave: '9304950',
+    Rating: '5',
+    BusinessProficiency: '59',
+    Address: '서울특별시 강서구 공항동 45-89',
+  },
+]);
+detailGrid.setDataSource(detailProvider);
+detailProvider.setFields(dtl_fields);
+detailGrid.setColumns(dtl_columns);  
+detailProvider.setRows(dtl_rows)
+
+
+</script>
+
+</html>
