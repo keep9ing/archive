@@ -19,6 +19,7 @@ console.log(fruits[fruits.length - 1]);
 // console.clear();
 // 3. Looping over an array
 // print all fruits
+
 // a. for
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
